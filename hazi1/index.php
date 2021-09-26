@@ -18,8 +18,8 @@ and open the template in the editor.
 
             $szam1 = 10;
             $szam2 = 2;
-            $muvelet = "+";
-            if ($muvelet == "+") {
+            $muvelet = "";
+            if ($muvelet == "") {
                 echo "Összeadás eredménye= " . ($szam1 + $szam2);
             $muvelet = "-";
             } elseif ($muvelet == "-") {
