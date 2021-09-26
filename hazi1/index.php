@@ -18,13 +18,16 @@ and open the template in the editor.
 
             $szam1 = 10;
             $szam2 = 2;
-            $muvelet = "*";
+            $muvelet = "+";
             if ($muvelet == "+") {
                 echo "Összeadás eredménye= " . ($szam1 + $szam2);
+            $muvelet = "-";
             } elseif ($muvelet == "-") {
                 echo "Kivonás eredménye= " . ($szam1 - $szam2); 
+            $muvelet = "*";
             } elseif ($muvelet == "*") {
                 echo "Szorzás eredménye= " . ($szam1 * $szam2);
+            $muvelet = "/";
             } elseif ($muvelet == "/") {
                 echo "Osztás eredménye= " . ($szam1 / $szam2);
             }
