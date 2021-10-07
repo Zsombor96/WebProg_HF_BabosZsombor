@@ -55,8 +55,8 @@ and open the template in the editor.
                 echo "nem helyes meret";
             }
         }
-        atalakit($szinek, 'nagybetus');
         atalakit($szinek, 'kisbetus');
+        atalakit($szinek, 'nagybetus');
         ?>
     </body>
 </html>
