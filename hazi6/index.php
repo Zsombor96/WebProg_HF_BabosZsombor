@@ -1,46 +1,34 @@
+<?php
+session_start();
+    if(!isset($_SESSION['szam']))
+    {
+        $_SESSION['szam'] = rand(1, 10);
+    }
+    $rand = $_SESSION['szam'];
+    $beirtSzam = isset($_POST['tipp']) ? $_POST['tipp'] : false;
+?>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
     <body>
+        <form action = "" method = "post">
+            Adj meg egy számot 1 és 10 között: 
+                <input type = "text" name = "tipp" /><br>
+                <button type = "submit">Ok</button><br>
+        </form>
         <?php
-            session_start();
-            
-            if(isset($_GET['beirtSzam'])){
-                
-                $szam = $_GET['beirtSzam'];
-                $generaltSzam;
-                $szoveg = '';
-
-                if(!isset($_SESSION['szam'])){
-                    $generaltSzam = rand(1,10);
-                    $_SESSION['szam'] = $generaltSzam;
+            if ($beirtSzam != false)
+            {
+                print "A szám amit megadtál: $beirtSzam <br />";
+                if ($beirtSzam == $rand){
+                    print "Eltaláltad! <br />"; 
+                    unset($_SESSION['szam']); 
                 }
-                else{
-                    $generaltSzam = $_SESSION['szam'];
+                else if ($beirtSzam > $rand){
+                    print "Kisebb. <br />";
                 }
-
-                switch($generaltSzam <=> $szam){
-                    case -1:
-                        $szoveg = " nagyobb mint a keresett szám!";
-                    break;
-                    case 1:
-                        $szoveg = " kisebb mint a keresett szám!";
-                    break;
-                    case 0:
-                        $szoveg = " egyenlő a keresett számmal!";
-                        unset($_SESSION['szam']);
-                    break;
+                else if ($beirtSzam < $rand){
+                    print "Nagyobb. <br />";
                 }
-                echo "<h3> $szam" . $szoveg;
             }
         ?>
-
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
-            <label for="beirtSzam">Szam:</label>
-            <input type="number" name="beirtSzam" min="1" max="10" required>
-            <input type="submit" value="Próbálkozás">
-        </form>
     </body>
 </html>
