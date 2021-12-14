@@ -1,7 +1,6 @@
 <?php
 
 namespace ProductNamespace {
-    //require_once "Cart.php";
     include "loader.php";
 
     use CartNamespace\Cart;
