@@ -15,8 +15,8 @@
                 echo "Last name: " . $_POST['lastName'] . "<br>";
                 echo "Email: " . $_POST['email'] . "<br>";
                 echo "Attend: ";
-                foreach ($_POST['attend'] as $theAttend) {
-                    echo $theAttend . " ";
+                foreach ($_POST['attend'] as $attend) {
+                    echo $attend . " ";
                 }
                 echo "<br>";
                 if (isset($_POST['tshirt'])) {
